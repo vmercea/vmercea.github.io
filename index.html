@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <title> Mercea Violeta CV</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+    <header>
+        <h1>Mercea Violeta</h1>
+        <img src="foto.jpg" alt="foto" height="50">
+        <h2>Consilier Juridic</h2>
+
+        <p id="motto">Despre mine: Consilier Juridic</p>
+        <ul id="top-menu-bar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#" onclick="var page = document.getElementById('skills'); page.style.display = ''">Skills</a></li>
+            <li><a href="#">Languages</a></li>
+            <li><a href="#">Project</a></li>
+        </ul>
+    </header>
+
+    <section id="content">
+        <div id="side-menu">
+            <section>Contact</section><form action="">
+                <div>
+                    <label for="name">Your Name</label>
+                    <input type="text" name="q" id="name" required>
+                </div>
+                <div>
+                    <label for="email">E-Mail</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <button>Send Request</button>
+            </form>
+    
+
+            <section>Menu 2</section>
+
+        </div>
+        <div id="main">
+            <div id="home" class="page">
+                <h2>Home</h2>
+                <p>Despre mine si proiectul meu</p>
+            </div>
+            
+            <div id="skills" class="page" style="display: none;">
+                <h2>Skills</h2>
+                <ul>
+                    <li class="favorite-skill">HTML</li>
+                    <li>CSS</li>
+                    <li>Js</li>
+                </ul>
+            </div>
+        
+            <div id="languages" class="page" style="display: none;" >
+                <h2>Languages</h2>
+                <table border="1">
+                    <tr>
+                        <th>Language</th>
+                        <th>Level</th>
+                    </tr>
+                    <tr>
+                        <td>Romanian</td>
+                        <td>Native</td>
+                    </tr>
+                    <tr>
+                        <td>English</td>
+                        <td>Good</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="proiect" class="Page" style="display: none;">
+
+            
+               <h2>Proiect</h2> 
+            </div>
+
+        </div>
+    </section>
+    <footer>Footer</footer>
+
+ 
+
+        <a href="https://www.linkedin.com/in/nicolaematei/" target="_blank">LinkedIn</a>
+        <a href="https://fasttrackit.org/" target="_blank">FastTrackIT</a>
+        <script>
+            var name = 'Matei';
+            console.log("Salut, bine ai venit "+  name + '!');
+            console.log("Salut, bine ai venit")
+            console.info(3444+4503);
+            var motto= document.getElementById("motto");
+            motto.style.color="blu";
+        </script>
+        <script src="functions.js"></script>
+
+</body>
+
+</html>
