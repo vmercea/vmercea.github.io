@@ -11,3 +11,6 @@ function showLanguagesPage() {
     var page = document.getElementById('languages');
     page.style.display = '';
 }
+function showProjectsPage() {
+    var 
+}
