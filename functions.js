@@ -2,40 +2,38 @@ function hide(id){
     var el = document.getElementById(id);
     el.style.display = 'none';
 }
+function show(id){
+    document.getElementById(id).style.display="";
+}
 
-function showHomePage() {
+function hideAllPages(){
+    hide("home");
     hide("skills");
     hide("languages");
-    hide("projects");
-
-    var page = document.getElementById('home');
-    page.style.display = '';
+    hide("projets");
+    var pages = ["home", "skill", "lamguages", "projects", "contact", "abaut me"];
+    console.debug(pagesIds);
+    console.warn(pageIds[0]);
+    console.warn(pageIds[1]);
+    console.warn(pagesIds[2]);
+    console.warn
+}
+function showHomePage() {
+    hideAllPages();
+    show("home");
 }
 
 function showSkillsPage() {
-    hide('home');
-    hide ("languages");
-    hide('projects');
-     
-    var page = document.getElementById('skills');
-    page.style.display = '';
+    hideAllPages();
+    show("skills");
+}
+function showLanguagesPage() {
+    hideAllPages();
+    show("languages");
 }
 
 function showProjectsPage() {
-    hide('skills');
-    hide('languages');
-    hide('home');
-      
-    var page = document.getElementById('Projects');
-    page.style.display = '';
-
+    hideAllPages();
+    show("projects");
 }
-
-function showLanguagesPage() {
-    hide('skills');
-    hide('home');
-    hide('projects');
      
-    var page = document.getElementById('languages');
-    page.style.display = '';
-}
