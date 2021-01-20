@@ -11,12 +11,16 @@ function hideAllPages(){
     hide("skills");
     hide("languages");
     hide("projets");
-    var pages = ["home", "skill", "lamguages", "projects", "contact", "abaut me"];
+    hide("contact");
+    hide("aboutme");
+    var pagesIds = ["home", "skill", "lamguages", "projects", "contact", "abaut me"];
     console.debug(pagesIds);
-    console.warn(pageIds[0]);
-    console.warn(pageIds[1]);
+    console.warn(pagesIds[0]);
+    console.warn(pagesIds[1]);
     console.warn(pagesIds[2]);
-    console.warn
+    console.warn(pagesIds[3]);
+    console.warn(pagesIds[4]);
+    console.warn(pagesIds[5]);
 }
 function showHomePage() {
     hideAllPages();
@@ -35,5 +39,14 @@ function showLanguagesPage() {
 function showProjectsPage() {
     hideAllPages();
     show("projects");
+}
+function showContactPage(){
+    hideAllPages();
+    show("contact");
+}
+
+function showAboutMe_Page(){
+    hideAllPages();
+    show("aboutme");
 }
      
