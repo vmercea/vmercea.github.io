@@ -7,46 +7,27 @@ function show(id){
 }
 
 function hideAllPages(){
-    hide("home");
-    hide("skills");
-    hide("languages");
-    hide("projets");
-    hide("contact");
-    hide("aboutme");
-    var pagesIds = ["home", "skill", "lamguages", "projects", "contact", "abaut me"];
-    console.debug(pagesIds);
-    console.warn(pagesIds[0]);
-    console.warn(pagesIds[1]);
-    console.warn(pagesIds[2]);
-    console.warn(pagesIds[3]);
-    console.warn(pagesIds[4]);
-    console.warn(pagesIds[5]);
+    var pages = Array.from(document.querySelectorAll(" .page"));
+    var pageIds =pages.map(function(page){
+        return page.id;
+    });
+    pageIds.forEach(function(pageIds){
+        hide(pageIds);
+    });
 }
 function showHomePage() {
     hideAllPages();
-    show("home");
+    show(pageIds);
 }
 
-function showSkillsPage() {
-    hideAllPages();
-    show("skills");
-}
-function showLanguagesPage() {
-    hideAllPages();
-    show("languages");
-}
+ function listenMenuClicks() {
+     document.addEventListener("click", function(e){
+         var link = e.target;
+         if (link.matches("#top-menu-bar a")) {
+             var id = link.innerHTML.toLowerCase();
+             showHomePage(id);
+         }
+     });
+ }
 
-function showProjectsPage() {
-    hideAllPages();
-    show("projects");
-}
-function showContactPage(){
-    hideAllPages();
-    show("contact");
-}
-
-function showAboutMe_Page(){
-    hideAllPages();
-    show("aboutme");
-}
-     
+ listenMenuClicks();
