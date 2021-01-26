@@ -1,33 +1,35 @@
-function hide(id){
+function hide(id) {
     var el = document.getElementById(id);
     el.style.display = 'none';
 }
-function show(id){
-    document.getElementById(id).style.display="";
+
+function show(id) {
+    document.getElementById(id).style.display = '';
 }
 
-function hideAllPages(){
-    var pages = Array.from(document.querySelectorAll(" .page"));
-    var pageIds =pages.map(function(page){
+function hideAllPages() {
+    var pages = Array.from(document.querySelectorAll(".page"));
+    var pageIds = pages.map(function(page){
         return page.id;
     });
-    pageIds.forEach(function(pageIds){
-        hide(pageIds);
+    pageIds.forEach(function(pageId){
+        hide(pageId);
     });
 }
-function showHomePage() {
+
+function showPage(pageId) {
     hideAllPages();
-    show(pageIds);
+    show(pageId);
 }
 
- function listenMenuClicks() {
-     document.addEventListener("click", function(e){
-         var link = e.target;
-         if (link.matches("#top-menu-bar a")) {
-             var id = link.innerHTML.toLowerCase();
-             showHomePage(id);
-         }
-     });
- }
+function listenMenuClicks() {
+    document.addEventListener("click", function(e){
+        var link = e.target;
+        if (link.matches("#top-menu-bar a")) {
+            var id = link.innerHTML.toLowerCase();
+            showPage(id);
+        }
+    });
+}
 
- listenMenuClicks();
+listenMenuClicks();
