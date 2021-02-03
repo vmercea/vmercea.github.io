@@ -9,7 +9,7 @@ function show(id) {
 
 function hideAllPages() {
     var pages = Array.from(document.querySelectorAll(".page"));
-    pages.forEach(function(.page){
+    pages.forEach(function(page){
     hide(page.id);
     
         });
@@ -38,9 +38,7 @@ var allSkills = [
     {name: "HTML", favorite: true, endorsements: 5 },
     {name: "CSS", favorite: true, endorsements: 5 },
     {name: "JS", favorite: true, endorsements: 7 },
-
-
-    ];
+];
 
 function showSkills(skills) {
     var allSkillsHtml = skills.map(function(skill){
