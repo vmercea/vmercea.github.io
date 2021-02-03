@@ -9,7 +9,7 @@ function show(id) {
 
 function hideAllPages() {
     var pages = Array.from(document.querySelectorAll(".page"));
-    pages.forEach(function(.page)){
+    pages.forEach(function(.page){
     hide(page.id);
     
         });
