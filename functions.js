@@ -9,13 +9,11 @@ function show(id) {
 
 function hideAllPages() {
     var pages = Array.from(document.querySelectorAll(".page"));
-    var pageIds = pages.map(function(page){
-        return page.id;
-    });
-    pageIds.forEach(function(pageId){
-        hide(pageId);
-    });
-}
+    pages.forEach(function(.page)){
+    hide(page.id);
+    
+        });
+    }
 
 function showPage(pageId) {
     hideAllPages();
@@ -33,3 +31,30 @@ function listenMenuClicks() {
 }
 
 listenMenuClicks();
+
+showPage("skills");
+
+var allSkills = [
+    {name: "HTML", favorite: true, endorsements: 5 },
+    {name: "CSS", favorite: true, endorsements: 5 },
+    {name: "JS", favorite: true, endorsements: 7 },
+
+
+    ];
+
+function showSkills(skills) {
+    var allSkillsHtml = skills.map(function(skill){
+        //TODO class="favorite-skill"
+        return `<li>${skill.name} <span>(${skill.endorsements})</span></li>`;
+    });
+
+    var skillsEl = document.querySelector("#skills ul");
+    skillsEl.innerHTML = allSkillsHtml.join("");
+    }  
+
+    showSkills(allSkills);
+
+
+
+
+
