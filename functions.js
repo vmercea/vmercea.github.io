@@ -25,6 +25,7 @@ function listenMenuClicks() {
         var link = e.target;
         if (link.matches("#top-menu-bar a")) {
             var id = link.innerHTML.toLowerCase();
+            var id = link.getAttribute("data-id");
             showPage(id);
         }
     });
@@ -34,11 +35,7 @@ listenMenuClicks();
 
 showPage("skills");
 
-var allSkills = [
-    {name: "HTML", favorite: true, endorsements: 5 },
-    {name: "CSS", favorite: true, endorsements: 5 },
-    {name: "JS", favorite: true, endorsements: 7 },
-];
+var allSkills = [];
 
 function showSkills(skills) {
     var allSkillsHtml = skills.map(function(skill){
@@ -47,9 +44,18 @@ function showSkills(skills) {
 
     var skillsEl = document.querySelector("#skills ul");
     skillsEl.innerHTML = allSkillsHtml.join("");
-    }  
+} 
+    
 
-    showSkills(allSkills);
+fetch("skills.json")
+    .then(function(r) {
+        return r.json();
+})
+.then(function(skills){
+    console.warn("done", skills);
+    showSkills(skills);
+    });
+// showSkills(allSkills);
 
 
 
