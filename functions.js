@@ -39,7 +39,10 @@ var allSkills = [];
 
 function showSkills(skills) {
     var allSkillsHtml = skills.map(function(skill){
-         return `<li>${skill.name} <span>(${skill.endorsements})</span></li>`;
+        var cls = skill.favorite ? "favorite-skill" : "";
+         return `<li class="${cls}">
+         ${skill.name} <span>(${skill.endorsements})</span>
+         </li>`;
     });
 
     var skillsEl = document.querySelector("#skills ul");
@@ -52,7 +55,6 @@ fetch("skills.json")
         return r.json();
 })
 .then(function(skills){
-    console.warn("done", skills);
     showSkills(skills);
     });
 // showSkills(allSkills);
