@@ -41,7 +41,7 @@ function showSkills(skills) {
     var allSkillsHtml = skills.map(function(skill){
         var cls = skill.favorite ? "favorite-skill" : "";
          return `<li class="${cls}">
-         ${skill.name} <span>(${skill.endorsements})</span>
+            ${skill.name} <span>(${skill.endorsements})</span>
          </li>`;
     });
 
@@ -55,6 +55,9 @@ fetch("skills.json")
         return r.json();
 })
 .then(function(skills){
+    skills.sort(function(s1, s2){
+        return s2.endorsements - s1.endorsements;
+    })
     showSkills(skills);
     });
 // showSkills(allSkills);
