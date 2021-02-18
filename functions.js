@@ -9,7 +9,7 @@ function show(id) {
 
 function hideAllPages() {
     const pages = Array.from(document.querySelectorAll(".page"));
-    pages.forEach((page) => {
+    pages.forEach(page => {
         hide(page.id);
     });
 }
@@ -20,7 +20,7 @@ function showPage(pageId) {
 }
 
 function listenMenuClicks() {
-    document.addEventListener("click",  (e) => {
+    document.addEventListener("click",  e => {
         const link = e.target;
         if (link.matches("#top-menu-bar a")) {
             const id = link.getAttribute("data-id");
@@ -48,7 +48,7 @@ function showSkills(skills) {
 } 
 
 fetch("skills.json")
-    .then((r) => {
+    .then(r => {
         return r.json();
 })
 .then((skills) => {
